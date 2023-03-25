@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>My A-Frame Scene</title>
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+<title>AR.js A-Frame Location-based</title>
+<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+<script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/master/three.js/build/ar-threex-location-only.js'></script>
+<script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js'></script>
 </head>
 <body>
-    <a-scene>
-        <!-- your scene goes here -->
-        <a-box color="blue" position="0 1.5 -2"></a-box>
-    </a-scene>
+<a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'>
+    <a-camera gps-new-camera='gpsMinDistance: 5'></a-camera>
+    <a-entity material='color: red' geometry='primitive: box' gps-new-entity-place="latitude: <your-lat>; longitude: <your-loon>" scale="10 10 10"></a-entity>
+</a-scene>
 </body>
 </html>
